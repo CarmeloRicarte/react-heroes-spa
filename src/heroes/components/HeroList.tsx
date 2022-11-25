@@ -1,18 +1,17 @@
-import React, { FC } from "react";
-import { Link } from "react-router-dom";
+import { FC } from "react";
+
 import { getHeroesByPublisher } from "../helpers";
+import { HeroCard } from "./HeroCard";
 
 export const HeroList: FC<{ publisher: string }> = ({ publisher }) => {
   const heroes = getHeroesByPublisher(publisher);
   return (
     <>
-      <ul>
+      <div className="row row-cols-1 row-cols-md-3 g-3">
         {heroes.map((hero) => (
-          <li key={hero.id}>
-            <Link to={hero.id}>{hero.superhero}</Link>
-          </li>
+          <HeroCard key={hero.id} {...hero} />
         ))}
-      </ul>
+      </div>
     </>
   );
 };
