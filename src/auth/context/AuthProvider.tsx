@@ -8,21 +8,29 @@ interface AuthProviderProps {
   children: JSX.Element | JSX.Element[];
 }
 
-const initialState: AuthState = {
-  logged: false,
+const init = () => {
+  const user = localStorage.getItem("user");
+  return {
+    logged: !!user,
+    user: user && JSON.parse(user),
+  };
 };
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
-  const [authState, dispatch] = useReducer(authReducer, initialState);
+  const [authState, dispatch] = useReducer(authReducer, {}, init);
 
   const login = (name = "") => {
+    const user = {
+      id: (Math.random() * 10).toString(),
+      name,
+    };
+
     const action = {
       type: AuthTypes.login,
-      payload: {
-        id: (Math.random() * 10).toString(),
-        name,
-      },
+      payload: user,
     };
+
+    localStorage.setItem("user", JSON.stringify(user));
     dispatch(action);
   };
 
