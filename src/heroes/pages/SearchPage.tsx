@@ -18,7 +18,11 @@ export const SearchPage = () => {
     searchText: q + "",
   });
 
-  const onSearchSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const onSearchSubmit = (
+    event:
+      | FormEvent<HTMLFormElement>
+      | React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
     event.preventDefault();
     navigate(`${location.pathname}?q=${searchText}`);
   };
@@ -46,7 +50,8 @@ export const SearchPage = () => {
 
           <button
             data-testid="search-button"
-            type="button"
+            type="submit"
+            onClick={onSearchSubmit}
             className="btn btn-outline-primary mt-3"
           >
             Search
