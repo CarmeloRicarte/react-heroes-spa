@@ -1,3 +1,7 @@
 export interface AuthState {
-  logged: false;
+  logged: boolean;
+  user?: {
+    id: string;
+    name: string;
+  };
 }
