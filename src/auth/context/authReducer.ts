@@ -2,7 +2,7 @@ import { AuthTypes } from "../types/AuthTypes";
 
 export const authReducer = (
   state = { logged: false },
-  action: { type: string; payload: { id: string; name: string } }
+  action: { type: string; payload?: { id: string; name: string } }
 ) => {
   switch (action.type) {
     case AuthTypes.login:
