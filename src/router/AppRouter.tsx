@@ -1,7 +1,6 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { LoginPage } from "../auth";
 import { HeroesRoutes } from "../heroes";
-import { Navbar } from "../ui";
 import { PrivateRoute } from "./PrivateRoute";
 import { PublicRoute } from "./PublicRoute";
 export const AppRouter = () => {
