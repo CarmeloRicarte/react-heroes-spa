@@ -1,3 +1,5 @@
+import { expect, describe, test } from "vitest";
+
 import { authReducer } from "../../../src/auth/context/authReducer";
 import { AuthTypes } from "../../../src/auth/types/AuthTypes";
 describe("Tests for authReducer.ts", () => {

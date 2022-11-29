@@ -1,4 +1,6 @@
+import { expect, describe, test } from "vitest";
 import { AuthTypes } from "./../../../src/auth";
+
 describe("Tests of AuthTypes", () => {
   test("should retrun the auth types", () => {
     expect(AuthTypes).toEqual({
