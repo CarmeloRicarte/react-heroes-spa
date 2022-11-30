@@ -29,7 +29,6 @@ describe("Tests of PrivateRoute", () => {
         </MemoryRouter>
       </AuthContext.Provider>
     );
-    screen.debug();
     expect(screen.getByText("Private Route")).toBeTruthy();
     // check that localStorage is saving last path
     expect(localStorage.setItem).toHaveBeenCalledWith(
