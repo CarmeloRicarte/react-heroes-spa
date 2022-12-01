@@ -72,7 +72,7 @@ export const SearchPage = () => {
           <div
             className="alert alert-danger animate__animated animate__fadeIn"
             style={{ display: showError ? "" : "none" }}
-            data-testid="searchAHeroDiv"
+            data-testid="noHeroAlert"
           >
             No hero with <b>{q}</b>
           </div>
